@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.dolev.notification_when_app_is_killed">
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <application>
+        <service
+            android:name=".NotificationOnKillService"
+            android:enabled="true"
+            android:exported="false"/>
+    </application>
+</manifest>
