@@ -9,6 +9,8 @@ public class NotificationWhenAppIsKilledPlugin: NSObject, FlutterPlugin {
   }
 
   private var observerAdded = false
+  private var notificationTitleOnKill: String!
+  private var notificationBodyOnKill: String!
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch call.method {
