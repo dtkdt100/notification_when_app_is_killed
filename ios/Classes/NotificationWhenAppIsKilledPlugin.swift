@@ -21,13 +21,13 @@ public class NotificationWhenAppIsKilledPlugin: NSObject, FlutterPlugin {
         observerAdded = true
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillTerminate(_:)), name: UIApplication.willTerminateNotification, object: nil)
 
-        result("iOS " + UIDevice.current.systemVersion)
+        result(true)
     case "cancelNotificationOnKillService":
         if observerAdded {
             NotificationCenter.default.removeObserver(self, name: UIApplication.willTerminateNotification, object: nil)
             observerAdded = false
         }
-        result("iOS " + UIDevice.current.systemVersion)
+        result(true)
     default:
       result(FlutterMethodNotImplemented)
     }
