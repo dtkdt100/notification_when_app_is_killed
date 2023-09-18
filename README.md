@@ -1,3 +1,6 @@
+NOTE: this is a concept package for know, it hasn't been tested on iOS, only in Android. Of you want to use it anyway please look at the example
+
+
 # notification_when_app_is_killed
 
 A new Flutter plugin project.
