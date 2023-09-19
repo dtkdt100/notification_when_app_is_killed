@@ -9,7 +9,8 @@ abstract class NotificationWhenAppIsKilledPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static NotificationWhenAppIsKilledPlatform _instance = MethodChannelNotificationWhenAppIsKilled();
+  static NotificationWhenAppIsKilledPlatform _instance =
+      MethodChannelNotificationWhenAppIsKilled();
 
   /// The default instance of [NotificationWhenAppIsKilledPlatform] to use.
   ///
@@ -24,11 +25,14 @@ abstract class NotificationWhenAppIsKilledPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<bool?> setNotificationOnKillService(ArgsForKillNotification argsForKillNotification) {
-    throw UnimplementedError('setNotificationOnKillService() has not been implemented.');
+  Future<bool?> setNotificationOnKillService(
+      ArgsForKillNotification argsForKillNotification) {
+    throw UnimplementedError(
+        'setNotificationOnKillService() has not been implemented.');
   }
 
   Future<bool?> cancelNotificationOnKillService() {
-    throw UnimplementedError('cancelNotificationOnKillService() has not been implemented.');
+    throw UnimplementedError(
+        'cancelNotificationOnKillService() has not been implemented.');
   }
 }

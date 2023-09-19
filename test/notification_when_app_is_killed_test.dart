@@ -1,8 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:notification_when_app_is_killed/notification_when_app_is_killed.dart';
 import 'package:notification_when_app_is_killed/notification_when_app_is_killed_platform_interface.dart';
 import 'package:notification_when_app_is_killed/notification_when_app_is_killed_method_channel.dart';
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 // class MockNotificationWhenAppIsKilledPlatform
 //     with MockPlatformInterfaceMixin

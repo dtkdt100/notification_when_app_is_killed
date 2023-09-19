@@ -23,11 +23,14 @@ class _MyAppState extends State<MyApp> {
   Future<void> setNotificationOnKill() async {
     bool success;
     try {
-      success = await _notificationWhenAppIsKilledPlugin.setNotificationOnKillService(
-            ArgsForKillNotification(
-                title: 'The app is killed', description: 'You can see this notification when the app is killed'),
-          ) ??
-          false;
+      success =
+          await _notificationWhenAppIsKilledPlugin.setNotificationOnKillService(
+                ArgsForKillNotification(
+                    title: 'The app is killed',
+                    description:
+                        'You can see this notification when the app is killed'),
+              ) ??
+              false;
     } on PlatformException {
       success = false;
     }
@@ -39,7 +42,9 @@ class _MyAppState extends State<MyApp> {
   Future<void> cancelNotificationOnKill() async {
     bool success;
     try {
-      success = await _notificationWhenAppIsKilledPlugin.cancelNotificationOnKillService() ?? false;
+      success = await _notificationWhenAppIsKilledPlugin
+              .cancelNotificationOnKillService() ??
+          false;
     } on PlatformException {
       success = false;
     }
@@ -59,9 +64,12 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              TextButton(onPressed: setNotificationOnKill, child: const Text('Set notification when app is killed')),
               TextButton(
-                  onPressed: cancelNotificationOnKill, child: const Text('Cancel notification when app is killed')),
+                  onPressed: setNotificationOnKill,
+                  child: const Text('Set notification when app is killed')),
+              TextButton(
+                  onPressed: cancelNotificationOnKill,
+                  child: const Text('Cancel notification when app is killed')),
               const SizedBox(height: 20),
               Text('Last method call status: $_success\n'),
             ],

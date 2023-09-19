@@ -1,6 +1,5 @@
 package com.dolev.notification_when_app_is_killed
 
-import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -21,7 +20,6 @@ class NotificationOnKillService: Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         title = intent?.getStringExtra("title") ?: "Your alarms may not ring"
         description = intent?.getStringExtra("description") ?: "You killed the app. Please reopen so your alarms can be rescheduled."
-
         return START_STICKY
     }
 
