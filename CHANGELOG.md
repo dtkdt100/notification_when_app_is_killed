@@ -7,3 +7,9 @@
 * Added videos of Android and iOS.
 * Updated README.md.
 * Fix dart format.
+
+## 0.0.3
+
+* Improve example with switch to enable/disable notification.
+* Support ios interrupt mode.
+* Support ios default sound.

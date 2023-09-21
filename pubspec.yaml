@@ -1,6 +1,6 @@
 name: notification_when_app_is_killed
 description: Push notification with title and description when the app is killed.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/dtkdt100/notification_when_app_is_killed
 
 environment:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:notification_when_app_is_killed/model/args_for_ios.dart';
 import 'package:notification_when_app_is_killed/model/args_for_kill_notification.dart';
 import 'package:notification_when_app_is_killed/notification_when_app_is_killed.dart';
 
@@ -17,25 +18,31 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _success = false;
+  bool _isServiceOn = false;
   final _notificationWhenAppIsKilledPlugin = NotificationWhenAppIsKilled();
 
   Future<void> setNotificationOnKill() async {
     bool success;
     try {
+      ArgsForIos argsForIos = ArgsForIos(
+        interruptionLevel: InterruptionLevel.critical,
+        useDefaultSound: true,
+      );
       success =
           await _notificationWhenAppIsKilledPlugin.setNotificationOnKillService(
                 ArgsForKillNotification(
                     title: 'The app is killed',
                     description:
-                        'You can see this notification when the app is killed'),
+                        'You can see this notification when the app is killed',
+                    argsForIos: argsForIos),
               ) ??
               false;
     } on PlatformException {
       success = false;
     }
+    if (!success) return;
     setState(() {
-      _success = success;
+      _isServiceOn = true;
     });
   }
 
@@ -48,8 +55,9 @@ class _MyAppState extends State<MyApp> {
     } on PlatformException {
       success = false;
     }
+    if (!success) return;
     setState(() {
-      _success = success;
+      _isServiceOn = false;
     });
   }
 
@@ -71,7 +79,16 @@ class _MyAppState extends State<MyApp> {
                   onPressed: cancelNotificationOnKill,
                   child: const Text('Cancel notification when app is killed')),
               const SizedBox(height: 20),
-              Text('Last method call status: $_success\n'),
+              Text('Service is on: '),
+              Switch(
+                  value: _isServiceOn,
+                  onChanged: (value) {
+                    if (value) {
+                      setNotificationOnKill();
+                    } else {
+                      cancelNotificationOnKill();
+                    }
+                  })
             ],
           ),
         ),
