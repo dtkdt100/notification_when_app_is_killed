@@ -13,9 +13,19 @@ class ArgsForKillNotification {
     this.argsForIos,
   });
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() {
+    if (argsForIos != null && Platform.isIOS) {
+      return {
         'title': title,
         'description': description,
-        if (argsForIos != null && Platform.isIOS) 'argsForIos': argsForIos!.toJson(),
+        'argsForIos': argsForIos!.toJson(),
+        'useDefaultSound': argsForIos!.useDefaultSound,
+        'interruptionLevel': argsForIos!.interruptionLevel.index,
       };
+    }
+    return {
+      'title': title,
+      'description': description,
+    };
+  }
 }

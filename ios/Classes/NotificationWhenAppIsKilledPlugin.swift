@@ -12,7 +12,7 @@ public class NotificationWhenAppIsKilledPlugin: NSObject, FlutterPlugin {
   private var notificationTitleOnKill: String!
   private var notificationBodyOnKill: String!
   private var notificationInterruptionLevel: Int!
-  private var notificationUseDefaultSound: Boolean!
+  private var notificationUseDefaultSound = false
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     switch call.method {
@@ -21,8 +21,8 @@ public class NotificationWhenAppIsKilledPlugin: NSObject, FlutterPlugin {
 
         notificationTitleOnKill = args["title"] as! String
         notificationBodyOnKill = args["description"] as! String
-        notificationInterruptionLevel = args["argsForIos"]["interruptionLevel"] as! Int
-        notificationUseDefaultSound = args["argsForIos"]["useDefaultSound"] as! Boolean
+        notificationInterruptionLevel = args["interruptionLevel"] as! Int
+        notificationUseDefaultSound = args["useDefaultSound"] as! Bool
 
         observerAdded = true
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillTerminate(_:)), name: UIApplication.willTerminateNotification, object: nil)
@@ -42,17 +42,17 @@ public class NotificationWhenAppIsKilledPlugin: NSObject, FlutterPlugin {
   @objc func applicationWillTerminate(_ notification: Notification) {
           let content = UNMutableNotificationContent()
           content.title = notificationTitleOnKill
-          content.body = notificationBodyOnKill
-          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-          let request = UNNotificationRequest(identifier: "notification on app kill", content: content, trigger: trigger)
+          content.body = notificationBodyOnKill;
+          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false);
+          let request = UNNotificationRequest(identifier: "notification on app kill", content: content, trigger: trigger);
 
-          if (@available(iOS 15.0, *)) {
-            content.interruptionLevel = notificationInterruptionLevel;
-          }
+         if #available(iOS 15.0, *) {
+           content.interruptionLevel = UNNotificationInterruptionLevel.critical;
+         }
 
-          if (notificationUseDefaultSound) {
-            content.sound = UNNotificationSound.defaultSound;
-          }
+         if (notificationUseDefaultSound == true) {
+           content.sound = UNNotificationSound.default;
+         }
 
           UNUserNotificationCenter.current().add(request) { (error) in
               if let error = error {
