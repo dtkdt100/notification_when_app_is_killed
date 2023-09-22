@@ -1,6 +1,7 @@
 import UIKit
 import Flutter
 import UserNotifications
+import notification_when_app_is_killed
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -15,5 +16,10 @@ import UserNotifications
 
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+
+  override func applicationWillTerminate(_ application: UIApplication) {
+    let notificationWhenAppIsKilledInstance = NotificationWhenAppIsKilledPlugin.instance
+    notificationWhenAppIsKilledInstance.applicationWillTerminate();
   }
 }

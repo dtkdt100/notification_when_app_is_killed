@@ -13,3 +13,7 @@
 * Improve example with switch to enable/disable notification.
 * Support ios interrupt mode.
 * Support ios default sound.
+
+## 0.0.4
+
+* fix: in some devices the notification wasn't working
