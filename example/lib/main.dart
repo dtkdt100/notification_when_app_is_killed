@@ -34,6 +34,7 @@ class _MyAppState extends State<MyApp> {
                     title: 'The app is killed',
                     description:
                         'You can see this notification when the app is killed',
+                    androidIcon: '@raw/ic_launcher',
                     argsForIos: argsForIos),
               ) ??
               false;

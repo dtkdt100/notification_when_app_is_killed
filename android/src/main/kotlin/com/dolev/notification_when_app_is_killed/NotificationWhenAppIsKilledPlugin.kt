@@ -28,6 +28,7 @@ class NotificationWhenAppIsKilledPlugin: FlutterPlugin, MethodCallHandler {
         val description = call.argument<String>("description")
         val interruptionLevel = call.argument<Int>("interruptionLevel")
         val useDefaultSound = call.argument<Boolean>("useDefaultSound")
+        val icon = call.argument<String>("icon")
 
         val serviceIntent = Intent(context, NotificationOnKillService::class.java)
 
@@ -35,6 +36,7 @@ class NotificationWhenAppIsKilledPlugin: FlutterPlugin, MethodCallHandler {
         serviceIntent.putExtra("description", description)
         serviceIntent.putExtra("interruptionLevel", interruptionLevel)
         serviceIntent.putExtra("useDefaultSound", useDefaultSound)
+        serviceIntent.putExtra("icon", icon)
 
         context.startService(serviceIntent)
         result.success(true)
