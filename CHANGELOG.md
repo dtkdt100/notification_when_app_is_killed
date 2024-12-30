@@ -17,3 +17,7 @@
 ## 0.0.4
 
 * fix: in some devices the notification wasn't working
+
+## 0.0.5
+
+* feat: add support for custom icon on Android
