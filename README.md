@@ -5,7 +5,7 @@ Push notification with title and description when the app is killed.
 Credit to  [gdelataillade](https://github.com/gdelataillade)
 
 
-![Alt Text](./example/screenshots/ios_phone_is_killed_example.gif "iOS") ![Alt Text](./example/screenshots/android_phone_is_killed_example.gif "Android")
+![Alt Text](./screenshots/ios_phone_is_killed_example.gif "iOS") ![Alt Text](./screenshots/android_phone_is_killed_example.gif "Android")
 
 
 ## Getting Started
