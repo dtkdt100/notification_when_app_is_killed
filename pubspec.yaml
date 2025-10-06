@@ -1,6 +1,6 @@
 name: notification_when_app_is_killed
 description: Push notification with title and description when the app is killed.
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/dtkdt100/notification_when_app_is_killed
 
 environment:
@@ -10,14 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface: ^2.0.2
-  permission_handler: ^11.0.0
+  plugin_platform_interface: ^2.1.8
+  permission_handler: ^12.0.1
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

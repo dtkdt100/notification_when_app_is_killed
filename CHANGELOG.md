@@ -1,12 +1,10 @@
-## 0.0.1
+## 0.0.5
 
-* First release: Push notification with title and description when the app is killed.
+* feat: add support for custom icon on Android
 
-## 0.0.2
+## 0.0.4
 
-* Added videos of Android and iOS.
-* Updated README.md.
-* Fix dart format.
+* fix: in some devices the notification wasn't working
 
 ## 0.0.3
 
@@ -14,10 +12,12 @@
 * Support ios interrupt mode.
 * Support ios default sound.
 
-## 0.0.4
+## 0.0.2
 
-* fix: in some devices the notification wasn't working
+* Added videos of Android and iOS.
+* Updated README.md.
+* Fix dart format.
 
-## 0.0.5
+## 0.0.1
 
-* feat: add support for custom icon on Android
+* First release: Push notification with title and description when the app is killed.

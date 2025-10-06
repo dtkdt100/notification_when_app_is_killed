@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
                   onPressed: cancelNotificationOnKill,
                   child: const Text('Cancel notification when app is killed')),
               const SizedBox(height: 20),
-              Text('Service is on: '),
+              const Text('Service is on: '),
               Switch(
                   value: _isServiceOn,
                   onChanged: (value) {

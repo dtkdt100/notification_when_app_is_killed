@@ -22,7 +22,6 @@ class ArgsForIos {
   }
 }
 
-
 enum InterruptionLevel {
   /// The system adds the notification to the notification
   /// list without lighting up the screen or playing a sound.
