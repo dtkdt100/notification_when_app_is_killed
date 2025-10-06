@@ -1,6 +1,6 @@
-# notification_when_app_is_killed_example
+# example
 
-Demonstrates how to use the notification_when_app_is_killed plugin.
+A new Flutter project.
 
 ## Getting Started
 
