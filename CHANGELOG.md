@@ -1,3 +1,10 @@
+## 0.0.6
+
+* fix: dart format
+* fix: more documentation
+* fix: Videos don't work in pub.get README.md
+* update: update package dependencies
+
 ## 0.0.5
 
 * feat: add support for custom icon on Android
