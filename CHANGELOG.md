@@ -1,3 +1,9 @@
+## 0.1.0
+
+* feat: add Swift Package Manager support on iOS
+* update: `permission_handler` to `^13.0.0`
+* update: iOS minimum deployment target to 12.0
+
 ## 0.0.9
 
 * fix: dart format
