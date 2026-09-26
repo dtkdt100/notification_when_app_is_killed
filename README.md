@@ -32,9 +32,20 @@ Show a local notification with a title and description when the user kills your 
 flutter pub add notification_when_app_is_killed
 ```
 
+Requires Flutter 3.44+ (Dart 3.12+).
+
 ### Android
 
-No extra setup is needed. The plugin declares the `POST_NOTIFICATIONS` permission itself.
+Set `compileSdk` to 37 in `android/app/build.gradle.kts`
+(required by [permission_handler](https://pub.dev/packages/permission_handler)):
+
+```kotlin
+android {
+    compileSdk = 37
+}
+```
+
+The plugin declares the `POST_NOTIFICATIONS` permission itself.
 
 ### iOS
 
@@ -126,7 +137,7 @@ await notificationWhenAppIsKilled.cancelNotificationOnKillService();
 | --- | --- | --- |
 | `title` | Both | Notification title (required) |
 | `description` | Both | Notification body (required) |
-| `androidIcon` | Android | Name of a mipmap resource to use as the icon (default: the app icon) |
+| `androidIcon` | Android | Name of a mipmap resource to use as the icon, e.g. `'ic_launcher'` (default: the app icon) |
 | `argsForIos.interruptionLevel` | iOS 15+ | `passive` (default), `active`, `timeSensitive` or `critical` |
 | `argsForIos.useDefaultSound` | iOS | Play the default notification sound (default: `true`) |
 

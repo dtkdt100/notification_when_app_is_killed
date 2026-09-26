@@ -11,10 +11,14 @@ import 'package:notification_when_app_is_killed/notification_when_app_is_killed_
 // }
 
 void main() {
-  final NotificationWhenAppIsKilledPlatform initialPlatform = NotificationWhenAppIsKilledPlatform.instance;
+  final NotificationWhenAppIsKilledPlatform initialPlatform =
+      NotificationWhenAppIsKilledPlatform.instance;
 
   test('$MethodChannelNotificationWhenAppIsKilled is the default instance', () {
-    expect(initialPlatform, isInstanceOf<MethodChannelNotificationWhenAppIsKilled>());
+    expect(
+      initialPlatform,
+      isInstanceOf<MethodChannelNotificationWhenAppIsKilled>(),
+    );
   });
 
   // test('getPlatformVersion', () async {

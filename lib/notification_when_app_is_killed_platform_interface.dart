@@ -26,13 +26,16 @@ abstract class NotificationWhenAppIsKilledPlatform extends PlatformInterface {
   }
 
   Future<bool?> setNotificationOnKillService(
-      ArgsForKillNotification argsForKillNotification) {
+    ArgsForKillNotification argsForKillNotification,
+  ) {
     throw UnimplementedError(
-        'setNotificationOnKillService() has not been implemented.');
+      'setNotificationOnKillService() has not been implemented.',
+    );
   }
 
   Future<bool?> cancelNotificationOnKillService() {
     throw UnimplementedError(
-        'cancelNotificationOnKillService() has not been implemented.');
+      'cancelNotificationOnKillService() has not been implemented.',
+    );
   }
 }

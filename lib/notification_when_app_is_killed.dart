@@ -12,7 +12,8 @@ class NotificationWhenAppIsKilled {
   ///
   /// Returns true if the notification is successfully set, false if permission is not granted, and null if there was an error.
   Future<bool?> setNotificationOnKillService(
-      ArgsForKillNotification argsForKillNotification) async {
+    ArgsForKillNotification argsForKillNotification,
+  ) async {
     if (await Permissions.requestNotificationPermissions() == false) {
       debugPrint('Notification permission is not granted');
       return false;

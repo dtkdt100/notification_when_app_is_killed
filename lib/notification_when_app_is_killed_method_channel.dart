@@ -13,17 +13,21 @@ class MethodChannelNotificationWhenAppIsKilled
 
   @override
   Future<bool?> setNotificationOnKillService(
-      ArgsForKillNotification argsForKillNotification) async {
+    ArgsForKillNotification argsForKillNotification,
+  ) async {
     final success = await methodChannel.invokeMethod<bool>(
-        'setNotificationOnKillService', argsForKillNotification.toJson());
+      'setNotificationOnKillService',
+      argsForKillNotification.toJson(),
+    );
     debugPrint('setNotificationOnKillService: $success');
     return success;
   }
 
   @override
   Future<bool?> cancelNotificationOnKillService() async {
-    final success = await methodChannel
-        .invokeMethod<bool>('cancelNotificationOnKillService');
+    final success = await methodChannel.invokeMethod<bool>(
+      'cancelNotificationOnKillService',
+    );
     debugPrint('cancelNotificationOnKillService: $success');
     return success;
   }

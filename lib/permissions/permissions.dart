@@ -5,7 +5,8 @@ class Permissions {
   ///
   /// Returns true if permission is granted, false otherwise.
   static bool statusNotificationPermissionGranted(
-      PermissionStatus permissionStatus) {
+    PermissionStatus permissionStatus,
+  ) {
     return permissionStatus.isGranted ||
         permissionStatus.isLimited ||
         permissionStatus.isProvisional;
@@ -28,7 +29,8 @@ class Permissions {
       return true;
     }
     isNotificationGranted = statusNotificationPermissionGranted(
-        await Permission.notification.request());
+      await Permission.notification.request(),
+    );
     return isNotificationGranted;
   }
 }

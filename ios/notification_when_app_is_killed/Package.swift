@@ -6,16 +6,20 @@ import PackageDescription
 let package = Package(
     name: "notification_when_app_is_killed",
     platforms: [
-        .iOS("12.0")
+        .iOS("13.0")
     ],
     products: [
         .library(name: "notification-when-app-is-killed", targets: ["notification_when_app_is_killed"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(name: "FlutterFramework", path: "../FlutterFramework")
+    ],
     targets: [
         .target(
             name: "notification_when_app_is_killed",
-            dependencies: [],
+            dependencies: [
+                .product(name: "FlutterFramework", package: "FlutterFramework")
+            ],
             resources: []
         )
     ]

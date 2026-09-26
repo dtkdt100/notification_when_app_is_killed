@@ -9,18 +9,19 @@ class ArgsForKillNotification {
   /// Description of the notification
   final String description;
 
-  /// Icon for Android notification from raw resources
-  /// Example: '@raw/ic_launcher'
+  /// Name of a mipmap resource to use as the Android notification icon.
+  /// Defaults to the app icon. Example: 'ic_launcher'
   final String? androidIcon;
 
   /// iOS specific arguments
   final ArgsForIos? argsForIos;
 
-  ArgsForKillNotification(
-      {required this.title,
-      required this.description,
-      this.androidIcon,
-      this.argsForIos});
+  ArgsForKillNotification({
+    required this.title,
+    required this.description,
+    this.androidIcon,
+    this.argsForIos,
+  });
 
   Map<String, dynamic> toJson() {
     if (argsForIos != null && Platform.isIOS) {
@@ -33,10 +34,6 @@ class ArgsForKillNotification {
         'interruptionLevel': argsForIos!.interruptionLevel.index,
       };
     }
-    return {
-      'title': title,
-      'description': description,
-      'icon': androidIcon,
-    };
+    return {'title': title, 'description': description, 'icon': androidIcon};
   }
 }
